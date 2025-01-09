@@ -1,0 +1,11 @@
+.inventory{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+button{
+    background-color: black;
+    font-size: 18px;
+    color: white;
+}
