@@ -12,7 +12,7 @@ const FORMS = {
     pointsGain() {
         let x = E(1) //points gain
 
-        x = x.add()
+        x = x.add(BUILDINGS_DATA.gen_1.effect)
 
 
         return x
@@ -33,11 +33,15 @@ const FORMS = {
     }
 }
 
+function buyGenerator() {
+
+}
+
 function loop() {
     diff = Date.now()-date;
-    ssf[1]()
     updateTemp()
     updateHTML()
     calc(diff/1000);
     date = Date.now()
+    setTimeout(loop, 1000 / 30);
 }

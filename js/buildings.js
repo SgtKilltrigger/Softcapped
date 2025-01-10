@@ -2,16 +2,8 @@ const BUILDINGS_DATA = {
     gen_1: {
         name: "Generator 1",
 
-        get autoUnlocked() {},
-        get noSpend() {},
-
         get res() { return player.points },
         set res(v) {player.points = v},
-
-        cost(x=this.level) {return getPointUpgradeCost(1, x) },
-        get bulk() {return getPointUpgradeBulk(1, this.res) },
-
-        get_cost: x => formatPoints(x),
 
         effect(x) {
             let power = E(1)
@@ -32,17 +24,16 @@ const BUILDINGS_DATA = {
         get res() { return player.points },
         set res(v) {player.points = v},
 
-        cost(x=this.level) {return getPointUpgradeCost(2, x) },
-        get bulk() {return getPointUpgradeBulk(2, this.res) },
+        cost(x=25) {return x },
 
         get_cost: x => formatPoints(x),
 
         effect(x) {
             let power = E(1)
-            
-            let effect = power.mul(x)
+            let production = power.mul(x)
+            BUILDINGS_DATA.get_1.res = BUILDINGS_DATA.gen_1.res.add(production)
 
-            return {power, effect}
+            return {power, production}
         },
     },
 }
