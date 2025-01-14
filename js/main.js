@@ -1,5 +1,4 @@
 var date = Date.now();
-var player
 
 const FORMS = {
     getGlobalSpeed() {
