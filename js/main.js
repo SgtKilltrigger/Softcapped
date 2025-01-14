@@ -33,9 +33,23 @@ const FORMS = {
     }
 }
 
-function buyGenerator() {
+function buyGenerator(generatorKey, player) {
+    const generator = BUILDINGS_DATA[generatorKey]
+    const cost = generator.cost
 
-}
+    if (!generator || generator.bought || generator.res.lt(cost)) {
+        return false
+    }
+
+    generator.res = generator.res.sub(cost)
+    generator.bought = true
+
+    return true
+    
+    
+    }
+
+
 
 function loop() {
     diff = Date.now()-date;

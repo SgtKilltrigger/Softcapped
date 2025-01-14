@@ -45,15 +45,15 @@ function load(x){
 }
 
 let player = {
-    points: E(0),
+    points: E(1),
     generators: {
         gen_1: {
-            owned: E(1), // Anzahl der Generatoren 1
-            productionRate: E(1), // Wie viele Punkte pro Sekunde generiert werden
+            owned: E(1),
+            productionRate: E(1),
         },
         gen_2: {
-            owned: E(0), // Anzahl der Generatoren 2
-            productionRate: E(1), // Wie viele "Generator 1" pro Sekunde generiert werden
+            owned: E(0),
+            productionRate: E(1),
         },
     },
 };
